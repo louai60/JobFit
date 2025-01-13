@@ -1,0 +1,21 @@
+{
+    "compilerOptions": {
+      "target": "esnext",                    // Target modern JavaScript features
+      "module": "esnext",                    // Use ES Modules
+      "jsx": "react-jsx",                    // For React 17+ and above
+      "moduleResolution": "node",           // Resolve modules in Node.js style
+      "strict": true,                        // Enable strict type-checking
+      "esModuleInterop": true,               // Enable CommonJS module compatibility
+      "allowSyntheticDefaultImports": true, // Allow default imports for modules without a default export
+      "skipLibCheck": true,                  // Skip type checks for dependencies
+      "forceConsistentCasingInFileNames": true, // Enforce consistent casing
+      "baseUrl": "./",                       // Base path for relative imports
+      "paths": {
+        "@/components/*": ["src/components/*"], // Alias for components
+        "@/lib/*": ["src/lib/*"]               // Alias for libraries (optional)
+      }
+    },
+    "include": ["src"],                      // Include all files in src
+    "exclude": ["node_modules", "dist"]      // Exclude unnecessary directories
+  }
+  
