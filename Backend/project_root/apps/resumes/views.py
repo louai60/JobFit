@@ -6,7 +6,7 @@ from rest_framework.decorators import api_view, permission_classes, authenticati
 from django.db import transaction
 from .models import Resume
 from .serializers import ResumeSerializer
-from .huggingface_parser import parse_resume_with_api   
+from .spacy_parser import parse_resume_with_spacy 
 from .pdf_extractor import extract_text_pdf, extract_text_docx, extract_text_txt, extract_text_rtf_odt
 import logging
 # from django.views.decorators.csrf import csrf_exempt
@@ -34,7 +34,7 @@ def extract_text_from_resume(file):
 
 @api_view(['POST'])
 @permission_classes([IsAuthenticated])
-@authentication_classes([JWTAuthentication])  # Ensure JWT token is used
+@authentication_classes([JWTAuthentication])
 def upload_and_process_resume(request):
     """
     Handles the upload and parsing of a resume.
@@ -59,16 +59,12 @@ def upload_and_process_resume(request):
 
                 resume_text = extracted_data["text"]
 
-                # Parse the extracted text
-                logger.info("Parsing the extracted resume text.")
-                parsed_data = parse_resume_with_api(resume_text)
+                # Parse the extracted text using spaCy
+                logger.info("Parsing the extracted resume text with spaCy.")
+                parsed_data = parse_resume_with_spacy(resume_text)
 
-                if "error" in parsed_data:
-                    raise ValueError(parsed_data["error"])
-
-                # Save the parsed data back to the resume
-                resume.parsed_data = {"parsed_data": parsed_data}
-                resume.save()
+                # Update resume with parsed data
+                update_resume_with_parsed_data(resume, parsed_data)
 
                 logger.info(f"Resume processed successfully for user {request.user.id}")
                 return Response({
@@ -83,7 +79,6 @@ def upload_and_process_resume(request):
         return Response({
             "error": f"An error occurred while processing the resume: {str(e)}"
         }, status=500)
-
 
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])
@@ -100,20 +95,19 @@ def get_resume_details(request, resume_id):
         return Response({"error": "Resume not found"}, status=status.HTTP_404_NOT_FOUND)
 
 def update_resume_with_parsed_data(resume, parsed_data):
+    """
+    Updates the resume model with parsed data from spaCy.
+    """
     try:
-        # Ensuring parsed_data is a list and contains dictionaries
-        if not isinstance(parsed_data, list) or not all(isinstance(item, dict) for item in parsed_data):
-            raise ValueError("Parsed data is not in the expected format: List of dictionaries required.")
+        # Clear existing data
+        resume.skills = []
+        resume.experience = []
+        resume.education = []
 
-        # Processing each entity in the parsed data
-        for entity in parsed_data:
-            entity_group = entity.get('entity_group')
-            if entity_group == 'SKILL':
-                resume.skills.append(entity['word'])
-            elif entity_group == 'EXPERIENCE':
-                resume.experience.append(entity['word'])
-            elif entity_group == 'EDUCATION':
-                resume.education.append(entity['word'])
+        # Update with new parsed data
+        resume.skills = parsed_data.get("skills", [])
+        resume.experience = parsed_data.get("experience", [])
+        resume.education = parsed_data.get("education", [])
 
         resume.save()
     except Exception as e:
