@@ -28,5 +28,5 @@ export default {
       }
     }
   },
-  plugins: [animatePlugin], // Use the imported plugin
+  plugins: [animatePlugin], 
 };
