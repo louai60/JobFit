@@ -1,0 +1,16 @@
+[
+    {
+        "text": "I have experience in Python and Machine Learning.",
+        "entities": [
+            {"start": 21, "end": 27, "label": "SKILL"},
+            {"start": 32, "end": 49, "label": "SKILL"}
+        ]
+    },
+    {
+        "text": "I studied Computer Science at Stanford University.",
+        "entities": [
+            {"start": 12, "end": 29, "label": "EDUCATION"},
+            {"start": 33, "end": 53, "label": "EDUCATION"}
+        ]
+    }
+]

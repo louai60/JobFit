@@ -138,3 +138,201 @@ Traceback (most recent call last):
                                                           ^^^^^^
 NameError: name 'status' is not defined
 2024-12-27 11:14:13,411 | ERROR    | django.server        | basehttp:213 | "GET /api/resumes/1/ HTTP/1.1" 500 118394
+2025-01-13 13:30:55,501 | ERROR    | django.request       | log:248 | Internal Server Error: /api/resumes/upload/
+2025-01-13 13:30:55,502 | ERROR    | django.server        | basehttp:213 | "POST /api/resumes/upload/ HTTP/1.1" 500 320
+2025-01-13 13:33:42,171 | ERROR    | django.request       | log:248 | Internal Server Error: /api/resumes/upload/
+2025-01-13 13:33:42,173 | ERROR    | django.server        | basehttp:213 | "POST /api/resumes/upload/ HTTP/1.1" 500 131
+2025-01-13 13:34:34,258 | ERROR    | django.request       | log:248 | Internal Server Error: /api/resumes/upload/
+2025-01-13 13:34:34,259 | ERROR    | django.server        | basehttp:213 | "POST /api/resumes/upload/ HTTP/1.1" 500 309
+2025-01-13 13:49:07,780 | ERROR    | django.request       | log:248 | Internal Server Error: /api/resumes/upload/
+2025-01-13 13:49:07,785 | ERROR    | django.server        | basehttp:213 | "POST /api/resumes/upload/ HTTP/1.1" 500 163
+2025-01-13 13:57:25,125 | ERROR    | django.request       | log:248 | Internal Server Error: /api/resumes/upload/
+2025-01-13 13:57:25,128 | ERROR    | django.server        | basehttp:213 | "POST /api/resumes/upload/ HTTP/1.1" 500 163
+2025-01-13 13:57:54,216 | ERROR    | django.request       | log:248 | Internal Server Error: /api/resumes/upload/
+2025-01-13 13:57:54,221 | ERROR    | django.server        | basehttp:213 | "POST /api/resumes/upload/ HTTP/1.1" 500 295
+2025-01-13 14:04:33,417 | ERROR    | django.request       | log:248 | Internal Server Error: /api/resumes/upload/
+2025-01-13 14:04:33,419 | ERROR    | django.server        | basehttp:213 | "POST /api/resumes/upload/ HTTP/1.1" 500 199
+2025-01-13 19:08:41,746 | ERROR    | django.request       | log:248 | Internal Server Error: /api/users/login/
+Traceback (most recent call last):
+  File "C:\Users\Skymil\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Skymil\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Skymil\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Skymil\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Skymil\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Skymil\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Skymil\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Skymil\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Python_Projects\JobFit\Backend\project_root\apps\users\views.py", line 67, in post
+    user = authenticate(email=email, password=password)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Skymil\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\decorators\debug.py", line 75, in sensitive_variables_wrapper
+    return func(*func_args, **func_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Skymil\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\__init__.py", line 79, in authenticate
+    user = backend.authenticate(request, **credentials)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Skymil\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\backends.py", line 42, in authenticate
+    user = UserModel._default_manager.get_by_natural_key(username)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Skymil\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\base_user.py", line 37, in get_by_natural_key
+    return self.get(**{self.model.USERNAME_FIELD: username})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Skymil\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Skymil\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\query.py", line 645, in get
+    num = len(clone)
+          ^^^^^^^^^^
+  File "C:\Users\Skymil\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\query.py", line 382, in __len__
+    self._fetch_all()
+  File "C:\Users\Skymil\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\query.py", line 1928, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Skymil\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Skymil\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\sql\compiler.py", line 1561, in execute_sql
+    sql, params = self.as_sql()
+                  ^^^^^^^^^^^^^
+  File "C:\Users\Skymil\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\sql\compiler.py", line 747, in as_sql
+    extra_select, order_by, group_by = self.pre_sql_setup(
+                                       ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Skymil\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\sql\compiler.py", line 84, in pre_sql_setup
+    self.setup_query(with_col_aliases=with_col_aliases)
+  File "C:\Users\Skymil\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\sql\compiler.py", line 73, in setup_query
+    self.select, self.klass_info, self.annotation_col_map = self.get_select(
+                                                            ^^^^^^^^^^^^^^^^
+  File "C:\Users\Skymil\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\sql\compiler.py", line 296, in get_select
+    sql, params = self.compile(col)
+                  ^^^^^^^^^^^^^^^^^
+  File "C:\Users\Skymil\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\sql\compiler.py", line 557, in compile
+    sql, params = node.as_sql(self, self.connection)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Skymil\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\expressions.py", line 1309, in as_sql
+    sql = ".".join(map(compiler.quote_name_unless_alias, identifiers))
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Skymil\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\sql\compiler.py", line 548, in quote_name_unless_alias
+    r = self.connection.ops.quote_name(name)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Skymil\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\backends\dummy\base.py", line 20, in complain
+    raise ImproperlyConfigured(
+django.core.exceptions.ImproperlyConfigured: settings.DATABASES is improperly configured. Please supply the ENGINE value. Check settings documentation for more details.
+2025-01-13 19:08:41,785 | ERROR    | django.server        | basehttp:213 | "POST /api/users/login/ HTTP/1.1" 500 189656
+2025-01-13 20:39:06,921 | ERROR    | django.request       | log:248 | Internal Server Error: /api/users/login/
+Traceback (most recent call last):
+  File "C:\Users\Skymil\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Skymil\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Skymil\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Skymil\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Skymil\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Skymil\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Skymil\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Skymil\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Python_Projects\JobFit\Backend\project_root\apps\users\views.py", line 67, in post
+    user = authenticate(email=email, password=password)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Skymil\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\decorators\debug.py", line 75, in sensitive_variables_wrapper
+    return func(*func_args, **func_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Skymil\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\__init__.py", line 79, in authenticate
+    user = backend.authenticate(request, **credentials)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Skymil\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\backends.py", line 42, in authenticate
+    user = UserModel._default_manager.get_by_natural_key(username)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Skymil\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\base_user.py", line 37, in get_by_natural_key
+    return self.get(**{self.model.USERNAME_FIELD: username})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Skymil\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Skymil\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\query.py", line 645, in get
+    num = len(clone)
+          ^^^^^^^^^^
+  File "C:\Users\Skymil\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\query.py", line 382, in __len__
+    self._fetch_all()
+  File "C:\Users\Skymil\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\query.py", line 1928, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Skymil\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Skymil\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\sql\compiler.py", line 1561, in execute_sql
+    sql, params = self.as_sql()
+                  ^^^^^^^^^^^^^
+  File "C:\Users\Skymil\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\sql\compiler.py", line 747, in as_sql
+    extra_select, order_by, group_by = self.pre_sql_setup(
+                                       ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Skymil\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\sql\compiler.py", line 84, in pre_sql_setup
+    self.setup_query(with_col_aliases=with_col_aliases)
+  File "C:\Users\Skymil\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\sql\compiler.py", line 73, in setup_query
+    self.select, self.klass_info, self.annotation_col_map = self.get_select(
+                                                            ^^^^^^^^^^^^^^^^
+  File "C:\Users\Skymil\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\sql\compiler.py", line 296, in get_select
+    sql, params = self.compile(col)
+                  ^^^^^^^^^^^^^^^^^
+  File "C:\Users\Skymil\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\sql\compiler.py", line 557, in compile
+    sql, params = node.as_sql(self, self.connection)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Skymil\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\expressions.py", line 1309, in as_sql
+    sql = ".".join(map(compiler.quote_name_unless_alias, identifiers))
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Skymil\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\sql\compiler.py", line 548, in quote_name_unless_alias
+    r = self.connection.ops.quote_name(name)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Skymil\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\backends\dummy\base.py", line 20, in complain
+    raise ImproperlyConfigured(
+django.core.exceptions.ImproperlyConfigured: settings.DATABASES is improperly configured. Please supply the ENGINE value. Check settings documentation for more details.
+2025-01-13 20:39:06,981 | ERROR    | django.server        | basehttp:213 | "POST /api/users/login/ HTTP/1.1" 500 189656
+2025-01-14 18:48:31,891 | ERROR    | django.request       | log:248 | Internal Server Error: /api/resumes/upload/
+2025-01-14 18:48:31,891 | ERROR    | django.server        | basehttp:213 | "POST /api/resumes/upload/ HTTP/1.1" 500 101
+2025-01-14 18:49:05,255 | ERROR    | django.request       | log:248 | Internal Server Error: /api/resumes/upload/
+2025-01-14 18:49:05,255 | ERROR    | django.server        | basehttp:213 | "POST /api/resumes/upload/ HTTP/1.1" 500 101
+2025-01-14 18:51:55,854 | ERROR    | django.request       | log:248 | Internal Server Error: /api/resumes/upload/
+2025-01-14 18:51:55,859 | ERROR    | django.server        | basehttp:213 | "POST /api/resumes/upload/ HTTP/1.1" 500 105
+2025-01-14 18:52:58,111 | ERROR    | django.request       | log:248 | Internal Server Error: /api/resumes/upload/
+2025-01-14 18:52:58,111 | ERROR    | django.server        | basehttp:213 | "POST /api/resumes/upload/ HTTP/1.1" 500 101
+2025-01-14 18:55:31,384 | ERROR    | django.request       | log:248 | Internal Server Error: /api/resumes/upload/
+2025-01-14 18:55:31,391 | ERROR    | django.server        | basehttp:213 | "POST /api/resumes/upload/ HTTP/1.1" 500 101
+2025-01-14 18:59:10,621 | ERROR    | django.request       | log:248 | Internal Server Error: /api/resumes/upload/
+2025-01-14 18:59:10,631 | ERROR    | django.server        | basehttp:213 | "POST /api/resumes/upload/ HTTP/1.1" 500 194
+2025-01-14 19:01:37,373 | ERROR    | django.request       | log:248 | Internal Server Error: /api/resumes/upload/
+2025-01-14 19:01:37,375 | ERROR    | django.server        | basehttp:213 | "POST /api/resumes/upload/ HTTP/1.1" 500 120
+2025-01-14 19:14:47,931 | ERROR    | django.request       | log:248 | Internal Server Error: /api/resumes/upload/
+2025-01-14 19:14:47,940 | ERROR    | django.server        | basehttp:213 | "POST /api/resumes/upload/ HTTP/1.1" 500 194
+2025-01-14 19:17:28,112 | ERROR    | django.request       | log:248 | Internal Server Error: /api/resumes/upload/
+2025-01-14 19:17:28,120 | ERROR    | django.server        | basehttp:213 | "POST /api/resumes/upload/ HTTP/1.1" 500 120
+2025-01-14 19:19:04,658 | ERROR    | django.request       | log:248 | Internal Server Error: /api/resumes/upload/
+2025-01-14 19:19:04,663 | ERROR    | django.server        | basehttp:213 | "POST /api/resumes/upload/ HTTP/1.1" 500 194
+2025-01-14 19:21:47,183 | ERROR    | django.request       | log:248 | Internal Server Error: /api/resumes/upload/
+2025-01-14 19:21:47,186 | ERROR    | django.server        | basehttp:213 | "POST /api/resumes/upload/ HTTP/1.1" 500 120
+2025-01-14 19:24:20,651 | ERROR    | django.request       | log:248 | Internal Server Error: /api/resumes/upload/
+2025-01-14 19:24:20,651 | ERROR    | django.server        | basehttp:213 | "POST /api/resumes/upload/ HTTP/1.1" 500 194

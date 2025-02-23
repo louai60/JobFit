@@ -95,26 +95,26 @@ def extract_text_rtf_odt(file):
         logger.error(f"Error extracting text from RTF/ODT: {str(e)}")
         raise
 
-def extract_text_from_resume(file):
-    """
-    Main function to extract text from different file types.
-    """
-    try:
-        file_name = file.name.lower()
+# def extract_text_from_resume(file):
+#     """
+#     Main function to extract text from different file types.
+#     """
+#     try:
+#         file_name = file.name.lower()
         
-        if file_name.endswith('.pdf'):
-            return {'text': extract_text_pdf(file)}
-        elif file_name.endswith('.docx'):
-            return {'text': extract_text_docx(file)}
-        elif file_name.endswith('.txt'):
-            return {'text': extract_text_txt(file)}
-        elif file_name.endswith('.rtf') or file_name.endswith('.odt'):
-            return {'text': extract_text_rtf_odt(file)}
-        else:
-            error_msg = f"Unsupported file format: {file_name}"
-            logger.error(error_msg)
-            return {'error': error_msg}
+#         if file_name.endswith('.pdf'):
+#             return {'text': extract_text_pdf(file)}
+#         elif file_name.endswith('.docx'):
+#             return {'text': extract_text_docx(file)}
+#         elif file_name.endswith('.txt'):
+#             return {'text': extract_text_txt(file)}
+#         elif file_name.endswith('.rtf') or file_name.endswith('.odt'):
+#             return {'text': extract_text_rtf_odt(file)}
+#         else:
+#             error_msg = f"Unsupported file format: {file_name}"
+#             logger.error(error_msg)
+#             return {'error': error_msg}
             
-    except Exception as e:
-        logger.error(f"Failed to extract text from file {file.name}: {str(e)}")
-        return {'error': f"Failed to extract text from file {file.name}: {str(e)}"}
+#     except Exception as e:
+#         logger.error(f"Failed to extract text from file {file.name}: {str(e)}")
+#         return {'error': f"Failed to extract text from file {file.name}: {str(e)}"}
